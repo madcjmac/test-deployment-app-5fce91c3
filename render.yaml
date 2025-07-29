@@ -1,0 +1,16 @@
+services:
+  - type: static_site
+    name: test-deployment-app
+    buildCommand: npm ci && npm run build
+    publishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: NPM_VERSION
+        value: 8
+      - key: GENERATE_SOURCEMAP
+        value: false
+      - key: CI
+        value: false
+      - key: BUILD_PATH
+        value: ./build
